@@ -92,13 +92,3 @@ On the whole dataset :
     loss : 0.0360565472869205 | acc : 0.9914328909793382
     
 From our experiments, it seems that 'fire' and 'no fire' images are always lassified with high accuracy. Images labelled 'start fire' are harder to classify for the network. This may be explained by the fact that 'fire' images may contain smoke and that 'start fire' images sometimes contain small flames.
-    
-#### Video examples
-
-Examples of videos annotated by our model can be found below.
-
-<img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_1.gif" width="350">
-<img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_2.gif" width="350">
-<img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_3.gif" width="350">
-<img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_0.gif" width="350">
-
