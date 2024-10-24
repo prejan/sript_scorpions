@@ -1,19 +1,12 @@
-# Forest fire detection using CNN
+# IEEE HACKATHON
 This project is an attempt to use convolutional neural networks (CNN) to detect the presence or the start 
 of a forest fire in an image. The idea is that this model could be applied to detect a fire or a start of 
 a fire from (aerial) surveillance footage of a forest. The model could be applied in real-time to low-framerate surveillance
 video (with fires not moving very fast, this assumption is somewhat sound) and give alert in case of fire. 
 
-A description of the project, along with examples of video annotation by our network is provided below.
-
-<img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_0.gif" width="300">      <img src="https://github.com/Skar0/fire-detection/blob/master/video_examples/video_1.gif" width="300">
 
 
-## Datasets
-#### Provided dataset
 
-Our network is trained on a provided dataset which contains images of three categories : 'fire', 'no fire', 'start fire' totalling around 6000 images. These images are mostly of forest or forest-like environments. Images labelled 'fire' contain visible flames,  'start fire' images contain smoke indicating the start of a fire. Finaly, images labelled 'no fire' are
-images taken in forests. 
 
 #### Augmenting the dataset
 
@@ -22,28 +15,7 @@ Our experiments showed that the network had trouble classifying 'start fire' ima
 ## Project structure
 Our goal was to create a legible project which handles every aspect of CNN creation and training. The code is organized as follows :
 
-```bash
-├── launcher.py
-├── transfer_learning.py
-├── video_annotation.py
-├── evaluate_model.py
-├── transfer_learned_model.h5
-├── setup/
-│   ├── setup_datasets.py
-│   └── naive_approach.py
-├── notebooks/
-│   ├── datasets_analysis.ipynb
-│   └── performance_analysis.ipynb
-├── custom_model/
-│   ├── cladoh.py
-│   ├── model_train_test.py
-│   └── model_train_tester.py
-├── video_examples/
-│   ├── video_0.gif
-│   ├── video_1.gif
-│   ├── video_2.gif
-│   └── video_3.gif
-```
+
 
 The datasets can be setup using functions defines in setup_datasets.py. The model we used which performs transfer learning from InceptionV3 is defined in transfer_learning.py, this module contains a function that defines a batch generator which performs data augmentation. The training process is also handled in this file, with the possibility of freezing layers and adapting the learning rate for fine-tuning. Modules video_annotation.py allows to annotate a video with predictions from our CNN and evaluate_model.py allows us to evaluate our model and mine difficult examples for the network.
 
